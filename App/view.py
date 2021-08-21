@@ -65,7 +65,6 @@ def loadBookTags():
     """
     Cargar los Tags de libros
     """
-    # TODO: Modificación de Est-1 en el Lab 2
     return controller.loadBooks('GoodReads/book_tags.csv')
     pass
 
