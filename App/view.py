@@ -64,34 +64,36 @@ def loadBookTags():
     """
     Cargar los Tags de libros
     """
-    # TODO: Modificación de Est-1 en el Lab 2
+    return controller.loadBookTags('GoodReads/book_tags-small.csv')
     pass
 
 
 """
 Menu principal
 """
-while True:
-    printMenu()
-    inputs = input('Seleccione una opción para continuar\n')
-    if int(inputs[0]) == 1:
-        print("Cargando información de libros....")
-        books = loadBooks()
-        print('Total de libros cargados: ' + str(lt.size(books)))
+if __name__ == "__main__":
+    running = True
+    while running:
+        printMenu()
+        inputs = input('Seleccione una opción para continuar\n')
+        if int(inputs[0]) == 1:
+            print("Cargando información de libros....")
+            books = loadBooks()
+            print('Total de libros cargados: ' + str(lt.size(books)))
 
-        # TODO: Modificación de Est-1 en el Lab 2
+            # TODO: Modificación de Est-1 en el Lab 2
 
 
-        # TODO: Modificación de Est-2 en el Lab 2
+            print('Ultimo libro cargado: ' + str(lt.lastElement(books)))
 
-    elif int(inputs[0]) == 2:
-        print("Cargando información de tags....")
-        tags = loadTags()
-        print('Total de tags cargados: ' + str(lt.size(tags)))
-    elif True:
-        # TODO: Modificación de Est-2 en el Lab 2
-        pass
+        elif int(inputs[0]) == 2:
+            print("Cargando información de tags....")
+            tags = loadTags()
+            print('Total de tags cargados: ' + str(lt.size(tags)))
+        elif int(inputs[0] == 3):
+            print('Cargando informacion de book-tags...')
+            book_tags = loadBookTags()
+            print('Load total Book-Tags cargados: ' + str(lt.size(book_tags)))
 
-    else:
-        sys.exit(0)
-sys.exit(0)
+        else:
+            running = False
