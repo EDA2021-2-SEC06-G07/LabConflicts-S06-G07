@@ -81,8 +81,7 @@ if __name__ == "__main__":
             books = loadBooks()
             print('Total de libros cargados: ' + str(lt.size(books)))
 
-            # TODO: Modificación de Est-1 en el Lab 2
-
+            print('Primer libro cargado: ' + str(lt.firstElement(books)))
 
             print('Ultimo libro cargado: ' + str(lt.lastElement(books)))
 
