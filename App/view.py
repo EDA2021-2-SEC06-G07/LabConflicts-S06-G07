@@ -39,19 +39,19 @@ operación solicitada
 
 
 def printMenu():
-    menu = """Opciones:
-    1- Cargar Libros
-    2- Cargar Tags
-    3- Cargar Tags de Libros
-    0- Salir"""
-    print(menu)
+    print("Opciones:")
+    print("1- Cargar Libros")
+    print("2- Cargar Tags")
+    # TODO: Modificación de Est-1 en el Lab 2
+    print("3- Cargar Book-Tags!")
+    print("0- Salir")
 
 
 def loadBooks():
     """
     Carga los libros
     """
-    return controller.loadBooks('GoodReads/books-small.csv')
+    return controller.loadBooks('GoodReads/books.csv')
 
 
 def loadTags():
@@ -65,35 +65,36 @@ def loadBookTags():
     """
     Cargar los Tags de libros
     """
-    return controller.loadBookTags('GoodReads/book_tags-small.csv')
+    # TODO: Modificación de Est-1 en el Lab 2
+    return controller.loadBooks('GoodReads/book_tags.csv')
+    pass
 
 
 """
 Menu principal
 """
-if __name__ == "__main__":
-    running = True
-    while running:
-        printMenu()
-        inputs = input('Seleccione una opción para continuar\n')
-        if int(inputs[0]) == 1:
-            print("Cargando información de libros....")
-            books = loadBooks()
-            print('Total de libros cargados: ' + str(lt.size(books)))
+while True:
+    printMenu()
+    inputs = input('Seleccione una opción para continuar\n')
+    if int(inputs[0]) == 1:
+        print("Cargando información de libros....")
+        books = loadBooks()
+        print('Total de libros cargados: ' + str(lt.size(books)))
 
-            # TODO: Modificación de Est-1 en el Lab 2
+        # TODO: Modificación de Est-1 en el Lab 2
+        print('Primer libro cargado: ' + str(lt.firstElement(books)))
 
 
-            print('Ultimo libro cargado: ' + str(lt.lastElement(books)))
+        # TODO: Modificación de Est-2 en el Lab 2
 
-        elif int(inputs[0]) == 2:
-            print("Cargando información de tags....")
-            tags = loadTags()
-            print('Total de tags cargados: ' + str(lt.size(tags)))
-        elif int(inputs[0] == 3):
-            print('Cargando informacion de book-tags...')
-            book_tags = loadBookTags()
-            print('Load total Book-Tags cargados: ' + str(lt.size(book_tags)))
+    elif int(inputs[0]) == 2:
+        print("Cargando información de tags....")
+        tags = loadTags()
+        print('Total de tags cargados: ' + str(lt.size(tags)))
+    elif True:
+        # TODO: Modificación de Est-2 en el Lab 2
+        pass
 
-        else:
-            running = False
+    else:
+        sys.exit(0)
+sys.exit(0)
