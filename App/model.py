@@ -75,4 +75,4 @@ def createTagList():
 def addBookTags(file_name):
     bts = lt.newList(datastructure = 'SINGLE_LINKED', filename = file_name)
     return bts
-    #bts stands for Book Tags... or Bulletproof Boy Scouts, depends on the context :3
+    #bts stands for Book Tags... or Bulletproof Boy Scouts, depends on the context UwU
